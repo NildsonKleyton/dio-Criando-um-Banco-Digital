@@ -1,33 +1,39 @@
 package br.com.desafio.controle;
 
 import br.com.desafio.entidades.*;
+import br.com.desafio.repositorio.ClienteRepositorio;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class mainTeste {
     public static void main(String[] args) {
-//        Cliente cliente = new Cliente("Nildson","99988877700","nildson@desafio.com","asdf");
-//        Cliente cliente2 = new Cliente("kleyton","99988877701","kleyton@desafio.com","qwer");
-//        Cliente teste = new Cliente();
-//
-//        teste.setCpf("32165498700");
-//
-//
-//        Conta cc = new ContaCorente(cliente);
-//        Conta cp = new ContaPoupanca(cliente);
-//        ContaCorente cc2 = new ContaCorente(cliente2);
-//        ContaPoupanca cp2 = new ContaPoupanca(cliente2);
-//
-//
-//        Banco nb = new Banco("NetBanc");//cria OBJ banco
-//        Banco vb = new Banco("VirtualBanc ");//cria OBJ banco
-//
-//        //agoara nao tem construtor vazio
-////        cliente.setNome("Nildson");
-////        cliente2.setNome("kleyton");
-//
+        Cliente cliente = new Cliente("Nildson","99988877700","nildson@desafio.com","asdf",11);
+        Cliente cliente2 = new Cliente("kleyton","99988877701","kleyton@desafio.com","qwer",11);
+        Cliente teste = new Cliente();
+
+        teste.setCpf("32165498700");
+
+
+        Conta cc = new ContaCorente(cliente);
+        Conta cp = new ContaPoupanca(cliente);
+        ContaCorente cc2 = new ContaCorente(cliente2);
+        ContaPoupanca cp2 = new ContaPoupanca(cliente2);
+
+        List<Conta> contas = new ArrayList<>(Arrays.asList(cc,cp));
+        List<Conta> contas2 = new ArrayList<>(){{
+            add(cc2);
+            add(cp2);
+        }};
+
+        /**
+         * Arrays.asList(cc,cp)
+         */
+        Banco nb = new Banco("NetBanc", contas);//cria OBJ banco
+        Banco vb = new Banco("VirtualBanc", contas2);//cria OBJ banco
+        Banco cb = new Banco("CryptoBank");
 //        cc.imprimirExtraco();
 //        cc2.imprimirExtraco();
 //
@@ -41,19 +47,19 @@ public class mainTeste {
 //        cc.imprimirExtraco();
 //        cp.imprimirExtraco();
 //        System.out.println();
-//
-//
-////        List<Conta> contas = new ArrayList<>();
-////        contas.add(cc);
-////        contas.add(cp);
-////        contas.add(cc2);
-//
-//
-//        nb.setContas(cc);
-//        nb.setContas(cp);
-//        vb.setContas(cc2);
-//        vb.setContas(cp2);
-//
+
+
+        nb.exibir();
+        vb.exibir();
+        nb.getContas().clear();
+        vb.getContas().remove(cc2);
+        nb.exibir();
+        vb.exibir();
+//        List<Conta> contas = new ArrayList<>();
+//        contas.add(cc);
+//        contas.add(cp);
+//        contas.add(cc2);
+
 //        for (Conta conta : nb.getContas()) {
 //            System.out.println(nb.getNome()+"\nCliente " + conta.getCliente() + "Agencia: " + conta.getAgencia() + " Saldo: " + conta.getSaldo() + "Conta: " + conta.getNumero());
 //        }
@@ -73,6 +79,13 @@ public class mainTeste {
         System.out.println("Msg criptografada: " + msgCifrada);
         String textoPuro = descriptografar(msgCifrada, chave);
         System.out.println("Msg original: " + textoPuro);
+
+        ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
+        clienteRepositorio.criar(cliente2);
+        clienteRepositorio.lertodos();
+
+        if(clienteRepositorio.contains(cliente2)) System.out.println("v");
+        else System.out.println("f");
 
     }
 

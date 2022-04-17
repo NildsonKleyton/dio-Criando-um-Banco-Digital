@@ -5,35 +5,37 @@ import java.util.Objects;
 public class Cliente {
 
     private static Integer SEQUENCIA = 1;
-
-    private String codigo;
+    //atributos
+    private int codigo;
     private String nome;
     private String cpf;
     private String email;
     private String senha;
+    private  int idade;
 
+    //consturores
     public Cliente(){}
 
-    public Cliente(String nome, String cpf, String email, String senha) {
-        this.codigo = "CL"+SEQUENCIA++;
+    public Cliente(String nome, String cpf, String email, String senha, int idade) {
+        this.codigo = SEQUENCIA++;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.senha = senha;
+        this.idade = idade;
     }
 
-    public String getCodigo() {
+    //get set
+    public int getCodigo() {
         return codigo;
     }
-
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -41,7 +43,6 @@ public class Cliente {
     public String getCpf() {
         return cpf.substring(0,3)+"."+cpf.substring(3,6)+"."+cpf.substring(6,9)+"-"+cpf.substring(9);
     }
-
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
@@ -49,7 +50,6 @@ public class Cliente {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -57,16 +57,28 @@ public class Cliente {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    public String getSenha() {
+        return senha;
+    }
 
+    public int getIdade() {
+        return idade;
+    }
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public void cliente(){
+
+    }
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nome='" + nome +
-                ", codigo=" + codigo + '\'' +
-                ", cpf='" + cpf.substring(0,3)+"."+cpf.substring(3,6)+"."+cpf.substring(6,9)+"-"+cpf.substring(9) + '\'' +
+        return  "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
-                '}';
+                ", idade=" + idade ;
     }
 
     @Override
