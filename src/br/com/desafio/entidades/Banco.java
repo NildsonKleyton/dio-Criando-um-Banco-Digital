@@ -8,6 +8,10 @@ public class Banco  {
     private String nome;
     private List<Conta> contas = new ArrayList<>();
 
+    public Banco(){
+
+    }
+
     public Banco(String nome){
         this.nome = nome;
     }
@@ -16,9 +20,9 @@ public class Banco  {
         return nome;
     }
 
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public List<Conta> getContas() {
         return contas;

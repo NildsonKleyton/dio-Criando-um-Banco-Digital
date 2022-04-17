@@ -1,6 +1,7 @@
 package br.com.desafio.controle;
 
 import br.com.desafio.entidades.*;
+import br.com.desafio.repositorio.ClienteRepositorio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +9,8 @@ import java.util.Scanner;
 
 public class mainTeste {
     public static void main(String[] args) {
-//        Cliente cliente = new Cliente("Nildson","99988877700","nildson@desafio.com","asdf");
-//        Cliente cliente2 = new Cliente("kleyton","99988877701","kleyton@desafio.com","qwer");
+//        Cliente cliente = new Cliente("Nildson","99988877700","nildson@desafio.com","asdf",11);
+        Cliente cliente2 = new Cliente("kleyton","99988877701","kleyton@desafio.com","qwer",11);
 //        Cliente teste = new Cliente();
 //
 //        teste.setCpf("32165498700");
@@ -65,14 +66,22 @@ public class mainTeste {
 //        System.out.println();
 //        System.out.println(vb.toString());
 
-        //criptografando
-        String senha = getString("Digite sua senha");
-        int chave = senha.length();
+//        //criptografando
+//        String senha = getString("Digite sua senha");
+//        int chave = senha.length();
+//
+//
+//        String msgCifrada = criptografar(senha, chave);
+//        System.out.println("Msg criptografada: " + msgCifrada);
+//        String textoPuro = descriptografar(msgCifrada, chave);
+//        System.out.println("Msg original: " + textoPuro);
 
-        String msgCifrada = criptografar(senha, chave);
-        System.out.println("Msg criptografada: " + msgCifrada);
-        String textoPuro = descriptografar(msgCifrada, chave);
-        System.out.println("Msg original: " + textoPuro);
+        ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
+        clienteRepositorio.criar(cliente2);
+        clienteRepositorio.lertodos();
+
+        if(clienteRepositorio.contains(cliente2)) System.out.println("v");
+        else System.out.println("f");
 
     }
 
