@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteRepositorio {
-
     // Seria um banco de dados, porem temporário alocado na memória.
     private List<Cliente> clientes = new ArrayList<Cliente>();
 
-
-    public boolean isEmpty() {
+    public boolean isEmpty() {//verifica se a lista esta vazia
         return clientes.isEmpty();
     }
 

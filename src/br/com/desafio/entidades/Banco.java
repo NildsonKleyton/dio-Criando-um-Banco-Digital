@@ -39,7 +39,6 @@ public class Banco {
         this.nome = nome;
     }
 
-
     public List<Conta> getContas() {
         return contas;
     }

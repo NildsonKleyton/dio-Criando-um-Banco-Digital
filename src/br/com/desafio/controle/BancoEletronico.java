@@ -11,9 +11,7 @@ import java.util.Scanner;
 public class BancoEletronico {
     public static void main(String[] args) {
         List<Banco> bancos = new ArrayList<>();//para usar como um banco de dados de "Banco"
-
         Cliente cliente = new Cliente();
-
         Conta cc = new ContaCorente(cliente);
         Conta cp = new ContaPoupanca(cliente);
         List<Conta> contas = new ArrayList<>(){{
@@ -22,7 +20,6 @@ public class BancoEletronico {
         }};
         Banco banco = new Banco();
         banco.setContas(contas);
-
         ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
 
 //        Cliente cliente = new Cliente("Teste1", "99988877700", "teste1@desafio.com", "asdf", 11);

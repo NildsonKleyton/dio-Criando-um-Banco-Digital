@@ -16,24 +16,31 @@ public class mainTeste {
 
         teste.setCpf("32165498700");
 
-
         Conta cc = new ContaCorente(cliente);
         Conta cp = new ContaPoupanca(cliente);
         ContaCorente cc2 = new ContaCorente(cliente2);
         ContaPoupanca cp2 = new ContaPoupanca(cliente2);
+        ContaCorente cc3 = new ContaCorente(teste);
+        ContaPoupanca cp3 = new ContaPoupanca(teste);
 
         List<Conta> contas = new ArrayList<>(Arrays.asList(cc,cp));
+
         List<Conta> contas2 = new ArrayList<>(){{
             add(cc2);
             add(cp2);
         }};
 
+        List<Conta> contas3 = new ArrayList<>();
+        contas3.add(cc3);
+        contas3.add(cp3);
+
         /**
          * Arrays.asList(cc,cp)
          */
         Banco nb = new Banco("NetBanc", contas);//cria OBJ banco
-        Banco vb = new Banco("VirtualBanc", contas2);//cria OBJ banco
-        Banco cb = new Banco("CryptoBank");
+        Banco vb = new Banco("VirtualBanc", contas2);
+        Banco cb = new Banco("CryptoBank",contas3);
+
 //        cc.imprimirExtraco();
 //        cc2.imprimirExtraco();
 //
