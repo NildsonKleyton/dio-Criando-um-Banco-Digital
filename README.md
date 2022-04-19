@@ -16,8 +16,9 @@ Desenvolvendo minha capacidade de abstração reproduzindo essa solução.
 - [x] Tela login
 - [x] Tela Cadrasta Cliente
 - [ ] Tela Caixa
-- 
+- [x] verificar lista vazia
 - [x] CRUD cliente
+- [ ] CRUR Excluir conta e banco
 - [x] Criar cliente
 - [ ] Criar conta
 - [ ] Criar banco
