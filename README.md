@@ -6,3 +6,18 @@ Para isso, os pilares da orientação a objetos são devidamente explorados no c
 prática e interativa.
 Desenvolvendo minha capacidade de abstração reproduzindo essa solução. 
 
+### MainTeste
+- [x] teste de cria Cliente
+- [x] teste de cria Contas CC e CP
+- [x] teste de cria Banco
+
+### Banco Eletronico
+- [x] Tela Banco
+- [x] Tela login
+- [x] Tela Cadrasta Cliente
+- [ ] Tela Caixa
+- 
+- [x] CRUD cliente
+- [x] Criar cliente
+- [ ] Criar conta
+- [ ] Criar banco
