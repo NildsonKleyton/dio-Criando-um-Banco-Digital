@@ -35,11 +35,34 @@ public class ClienteRepositorio {
     }
 
     // Ler
+    public Cliente get(long codigo) {
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente cliente = clientes.get(i);
+            if (cliente.getCodigo() == codigo) {
+                return cliente;
+            }
+        }
+
+        return null;
+    }
     public Cliente ler(long codigo) {
         for (int i = 0; i < clientes.size(); i++) {
             Cliente cliente = clientes.get(i);
             if (cliente.getCodigo() == codigo) {
                 System.out.println("Código: " + cliente.getCodigo() + " Nome: " + cliente.getNome());
+
+                return cliente;
+            }
+            if (clientes.isEmpty()) System.out.println("Não a cliente cadastrado!");
+        }
+        return null;
+    }
+
+    public Cliente ler(String cpf) {
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente cliente = clientes.get(i);
+            if (cliente.getCpf() == cpf) {
+                System.out.println("CPF: " + cliente.getCpf() + " Nome: " + cliente.getNome());
 
                 return cliente;
             }

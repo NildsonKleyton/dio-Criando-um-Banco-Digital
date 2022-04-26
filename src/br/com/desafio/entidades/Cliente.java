@@ -1,6 +1,7 @@
 package br.com.desafio.entidades;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Cliente {
 
@@ -40,9 +41,14 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getCpf() {
+    public String getCpfFomatado() {
         return cpf.substring(0,3)+"."+cpf.substring(3,6)+"."+cpf.substring(6,9)+"-"+cpf.substring(9);
     }
+
+    public String getCpf() {
+        return cpf;
+    }
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
@@ -68,9 +74,28 @@ public class Cliente {
         this.idade = idade;
     }
 
-    public void cliente(){
+//   //Confirma senha
+//    public boolean verDeSenha() {
+//        Scanner sc = new Scanner(System.in);
+//        boolean liberado = true;
+//        String senhaUsuario;
+//        for (int tentativas = 3; tentativas>0;tentativas--) {
+//            System.out.println("Senha: ");
+//            senhaUsuario = sc.nextLine();
+//            if (senhaUsuario.equals(getSenha())) {
+//                liberado = true;
+//                break;
+//            }else {
+//                liberado = false;
+//                System.out.println("Senha incorreta.");
+//                System.out.printf("Você tem mais %d tentativas\n", tentativas);
+//                System.out.println("Digite uma senha válida:");
+//            }
+//
+//        }
+//        return liberado;
+//    }
 
-    }
     @Override
     public String toString() {
         return  "codigo=" + codigo +

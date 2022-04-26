@@ -10,18 +10,27 @@ import java.util.Scanner;
 
 public class BancoEletronico {
     public static void main(String[] args) {
-        List<Banco> bancos = new ArrayList<>();//para usar como um banco de dados de "Banco"
-        Cliente cliente = new Cliente();
-        Conta cc = new ContaCorente(cliente);
-        Conta cp = new ContaPoupanca(cliente);
-        List<Conta> contas = new ArrayList<>(){{
-            add(cc);
-            add(cp);
-        }};
-        Banco banco = new Banco();
-        banco.setContas(contas);
+        //as listas de bando ainda não estar em uso
+        List<Banco> nbbancos = new ArrayList<>();//para usar como um banco de dados de "Banco"
+        List<Banco> vbbancos = new ArrayList<>();//para usar como um banco de dados de "Banco"
+        List<Banco> cbbancos = new ArrayList<>();//para usar como um banco de dados de "Banco"
+
+        Banco nb = new Banco("NetBanc");//cria OBJ banco apenas com o nome do banco
+        Banco vb = new Banco("VirtualBanc");
+        Banco cb = new Banco("CryptoBank");
+
+
+//        Cliente cliente = new Cliente();
+//        Conta cc = new ContaCorente(cliente);
+//        Conta cp = new ContaPoupanca(cliente);
+//        List<Conta> contas = new ArrayList<>(){{
+//            add(cc);
+//            add(cp);
+//        }};
+
         ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
 
+        // cliente usado para teste
 //        Cliente cliente = new Cliente("Teste1", "99988877700", "teste1@desafio.com", "asdf", 11);
 //        Cliente cliente2 = new Cliente("Teste2", "99988877701", "teste2@desafio.com", "qwer", 22);
 //        Cliente cliente3 = new Cliente("Teste3", "99988877702", "teste3@desafio.com", "123!@#", 33);
@@ -38,20 +47,15 @@ public class BancoEletronico {
 
             switch (opcao) {
                 case 1:
-                    banco.setNome("NetBank");
-
-                    login(banco, clienteRepositorio);
-
+                    login(nb, clienteRepositorio);
 
                     break;
                 case 2:
-                    banco.setNome("VirtualBank");
-                    login(banco, clienteRepositorio);
+                    login(vb, clienteRepositorio);
 
                     break;
                 case 3:
-                    banco.setNome("CryptoBank");
-                    login(banco, clienteRepositorio);
+                    login(cb, clienteRepositorio);
 
                     break;
                 case -1:
@@ -204,7 +208,7 @@ public class BancoEletronico {
                             clienteRepositorio.lertodos();
                         } else if (op == 2) {
                             int cod = getInt("Digite o códogo do cliente: ");
-                            if (clienteRepositorio.contains( clienteRepositorio.ler(cod))){
+                            if (clienteRepositorio.contains(clienteRepositorio.ler(cod))) {
                             } else System.out.println("Não a cliente cadastrado!");
                             continue;
                         } else {
@@ -256,26 +260,53 @@ public class BancoEletronico {
                     } else System.out.println("Não a cliente cadastrado!");
                     break;
                 case 5:
-                    System.out.println("ate maisl");
+                    System.out.println("até mais");
                     break;
                 default:
+                    opcaoInvalido();
                     break;
             }
         } while (op != 5);
     }
+
     /**
      * Menu Caixa Eletrônico
      */
     public static void menuCaixaEletronico(Banco banco, ClienteRepositorio clienteRepositorio) {
-        System.out.println("\n*===================================*");
-        System.out.println("\t\t\t" + banco.getNome());
-        System.out.println("*===================================*");
-        System.out.println("\t1 - Extrato");
-        System.out.println("\t2 - Depositar");
-        System.out.println("\t3 - Sacar");
-        System.out.println("\t4 - Transferir");
-        System.out.println("\t5 - Voltar ao menu anterior");
-        System.out.println("*===================================*");
+
+//        String recebeCPF = getString("Digite seu CPF: ");
+//        String recebeSenha = getString("Digite a senha: ");
+//        int cod = getInt("\nDigite o códogo: ");
+//        clienteRepositorio.ler(cod);
+
+        int op = 0;
+        do {
+            System.out.println("\n*===================================*");
+            System.out.println("\t\t\t" + banco.getNome());
+            System.out.println("*===================================*");
+            System.out.println("\t1 - Extrato");
+            System.out.println("\t2 - Depositar");
+            System.out.println("\t3 - Sacar");
+            System.out.println("\t4 - Transferir");
+            System.out.println("\t5 - Voltar ao menu anterior");
+            System.out.println("*===================================*");
+            op = getOpcaoUsuario();
+            switch (op) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                default:
+                    opcaoInvalido();
+                    break;
+            }
+        } while (op != 5);
     }
 
 

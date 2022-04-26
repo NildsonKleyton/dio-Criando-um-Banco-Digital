@@ -15,10 +15,15 @@ Desenvolvendo minha capacidade de abstração reproduzindo essa solução.
 - [x] Tela Banco
 - [x] Tela login
 - [x] Tela Cadrasta Cliente
-- [ ] Tela Caixa
+- [x] Tela Caixa
 - [x] verificar lista vazia
-- [x] CRUD cliente
-- [ ] CRUR Excluir conta e banco
+- [x] CRUD cliente (ClienteRepositorio)
+- [ ] CRUR conta (ContaRepositorio)
+- [ ] CRUR banco(BancoRepositorio)
 - [x] Criar cliente
 - [ ] Criar conta
 - [ ] Criar banco
+- [ ] Operação bancaria
+- [ ] Tratar os bancos individualmente para listar cliente por banco
+ 
+Verificando usuário para acessar o caixa
